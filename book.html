@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Free Consultation — Your Name</title>
+<meta name="description" content="Book a free consultation">
+<meta property="og:title" content="Book a Free Consultation — Your Name"><meta property="og:description" content="Book a free consultation"><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236366f1'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'%3EYN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="premium.css"><link rel="stylesheet" href="light.css"><link rel="stylesheet" href="pages.css">
+</head>
+<body class="sub" data-page="book">
+<div id="site-nav"></div>
+<main>
+<section class="pagehead"><div class="container"><span class="eyebrow">Free Consultation</span><h1>Book a <span class="gradtext">free 30-min call</span></h1><p>Pick a time, tell me about your project, and I’ll come prepared.</p></div></section><section class="section"><div class="container book"><div class="cbox"><h3>Choose a date</h3>
+    <div class="cal__head"><button type="button" id="prev" aria-label="Previous month">‹</button><b id="mname"></b><button type="button" id="next" aria-label="Next month">›</button></div>
+    <div class="cal__grid" id="cal"></div><h3>Choose a time</h3><div class="slots" id="slots"></div></div>
+    <div class="cbox" id="bwrap"><h3>Your details</h3><form class="bform" id="bform" novalidate>
+      <div class="sel" id="sel"></div>
+      <input name="name" placeholder="Your name" aria-label="Name" required><input name="email" type="email" placeholder="Email address" aria-label="Email" required>
+      <input name="phone" placeholder="Phone / WhatsApp (optional)" aria-label="Phone">
+      <textarea name="msg" id="bmsg" rows="4" placeholder="Tell me about your project…" aria-label="Project"></textarea>
+      <button class="btn btn--primary" type="submit">Confirm booking</button><p class="note" id="bnote" role="status"></p></form></div></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="data.js"></script><script src="common.js"></script><script src="pages.js"></script>
+</body>
+</html>

@@ -57,13 +57,16 @@ $$('.reveal').forEach((el, i) => {
   io.observe(el);
 });
 
-// contact form (front-end only: wire to Formspree/Netlify/etc. to receive messages)
-$('#form').addEventListener('submit', e => {
+// contact form -> emails the lead via sendLead (common.js)
+$('#form').addEventListener('submit', async e => {
   e.preventDefault();
   const f = e.target, note = $('#formNote');
   const ok = f.name.value.trim() && /\S+@\S+\.\S+/.test(f.email.value) && f.msg.value.trim();
-  note.textContent = ok ? "Thanks! I'll reply within 48 hours." : 'Please fill in every field with a valid email.';
-  if (ok) f.reset();
+  if (!ok) { note.textContent = 'Please fill in every field with a valid email.'; return; }
+  note.textContent = 'Sending…';
+  const sent = await window.sendLead({ name: f.name.value, email: f.email.value, project: f.msg.value });
+  note.textContent = sent ? "Thanks! I'll reply within 48 hours." : 'Opening your email app so you can send it…';
+  if (sent) f.reset();
 });
 
 $('#yr').textContent = new Date().getFullYear();

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shafin5556.github.io/C_portfolio/sitemap.xml

@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your Name — Websites, Apps & AI Automation for Growing Businesses</title>
+<meta property="og:title" content="Your Name — Websites, Apps & AI Automation"><meta property="og:type" content="website"><meta property="og:url" content="https://shafin5556.github.io/C_portfolio/">
+<meta name="theme-color" content="#6366f1">
+<link rel="canonical" href="https://shafin5556.github.io/C_portfolio/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236366f1'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'%3EYN%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Ready to launch. Built to scale. Custom web apps, ecommerce, and AI automation — shipped fast, built to last.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +17,9 @@
 <link rel="stylesheet" href="light.css">
 <link rel="stylesheet" href="software.css">
 <link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="pages.css">
 </head>
-<body>
+<body data-page="home">
 <a class="skip" href="#main">Skip to main content</a>
 <div class="progress" id="progress"></div>
 <div class="cursor" id="cursor" aria-hidden="true"></div>
@@ -24,10 +29,12 @@
     <a href="#top" class="logo"><span class="logo__mark">YN</span> Your Name</a>
     <nav class="nav__links" id="navLinks" aria-label="Main">
       <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#stories">Reviews</a>
-      <a href="#contact" class="btn btn--primary btn--sm">Book a Free Call</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="calculator.html">Estimate</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="book.html" class="btn btn--primary btn--sm">Book a Free Call</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
@@ -112,7 +119,7 @@
     <div class="head reveal">
       <span class="eyebrow">Selected Work</span>
       <h2>Products that win customers</h2>
-      <p>Real builds, real results. Pick a category and open a live preview.</p>
+      <p>Real builds, real results. Pick a category and open any product for a live device preview.</p>
     </div>
     <div class="tabs reveal" id="tabs" role="tablist">
       <button class="tab is-active" data-filter="all">All</button>
@@ -128,7 +135,7 @@
           <small>eCommerce</small><h3>Shopify-style Store</h3>
           <p>Fast storefront with cart, checkout, and inventory dashboard.</p>
           <div class="card__meta"><span>★ 4.9</span><span>+312% revenue</span></div>
-          <a href="#" class="link">Live Preview ↗</a>
+          <a href="product.html?id=store" class="link">View Product →</a>
         </div>
       </article>
       <article class="card" data-cat="saas">
@@ -137,7 +144,7 @@
           <small>SaaS</small><h3>Analytics Dashboard</h3>
           <p>Multi-tenant dashboard with real-time charts and team roles.</p>
           <div class="card__meta"><span>★ 5.0</span><span>12k users</span></div>
-          <a href="#" class="link">Live Preview ↗</a>
+          <a href="product.html?id=analytics" class="link">View Product →</a>
         </div>
       </article>
       <article class="card" data-cat="marketplace">
@@ -146,7 +153,7 @@
           <small>Marketplace</small><h3>Multi-vendor Marketplace</h3>
           <p>Vendor onboarding, payouts, reviews, and admin controls.</p>
           <div class="card__meta"><span>★ 4.8</span><span>300+ vendors</span></div>
-          <a href="#" class="link">Live Preview ↗</a>
+          <a href="product.html?id=marketplace" class="link">View Product →</a>
         </div>
       </article>
       <article class="card" data-cat="ai">
@@ -155,7 +162,7 @@
           <small>AI &amp; Automation</small><h3>AI Support Assistant</h3>
           <p>Chatbot trained on company docs that resolves 70% of tickets.</p>
           <div class="card__meta"><span>★ 4.9</span><span>−70% tickets</span></div>
-          <a href="#" class="link">Live Preview ↗</a>
+          <a href="product.html?id=assistant" class="link">View Product →</a>
         </div>
       </article>
       <article class="card" data-cat="ecommerce">
@@ -164,7 +171,7 @@
           <small>eCommerce</small><h3>Fashion Brand Website</h3>
           <p>Editorial design with lookbooks and one-page checkout.</p>
           <div class="card__meta"><span>★ 4.8</span><span>2.1× conversion</span></div>
-          <a href="#" class="link">Live Preview ↗</a>
+          <a href="product.html?id=fashion" class="link">View Product →</a>
         </div>
       </article>
       <article class="card" data-cat="saas">
@@ -173,7 +180,7 @@
           <small>SaaS</small><h3>Booking &amp; Scheduling App</h3>
           <p>Calendar sync, payments, reminders, and client portal.</p>
           <div class="card__meta"><span>★ 4.9</span><span>8k bookings/mo</span></div>
-          <a href="#" class="link">Live Preview ↗</a>
+          <a href="product.html?id=booking" class="link">View Product →</a>
         </div>
       </article>
     </div>
@@ -226,6 +233,32 @@
   </div>
 </section>
 
+
+<!-- PROCESS / SCROLL STORY -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="head reveal"><span class="eyebrow">How it works</span><h2>From idea to live product</h2><p>A clear, predictable process — with a working demo every week.</p></div>
+    <div class="story">
+      <div class="story__stick reveal"><div class="story__device"><div class="win__bar"><i></i><i></i><i></i><span>your-project</span></div>
+        <div class="story__screen">
+          <div class="story__pane on"><div class="sk m"></div><div class="sk s"></div><div class="cols"><i></i><i></i><i></i></div><div class="ok">Goals &amp; users defined</div><div class="ok">Scope &amp; timeline agreed</div></div>
+          <div class="story__pane"><div class="blk g"></div><div class="cols"><i class="f"></i><i class="f"></i><i class="f"></i></div><div class="sk m"></div><div class="ok">Wireframes approved</div><div class="ok">UI design signed off</div></div>
+          <div class="story__pane"><div class="blk"></div><div class="sk"></div><div class="sk m"></div><div class="sk s"></div><div class="ok">Weekly demo shipped</div><div class="ok">Tests passing</div></div>
+          <div class="story__pane"><div class="rocket">🚀</div><div class="ok">Deployed to the cloud</div><div class="ok">Analytics &amp; monitoring live</div><div class="ok">Support active</div></div>
+        </div></div></div>
+      <div class="steps">
+        <div class="step"><b>STEP 01</b><h3>Discover</h3><p>We talk goals, users and constraints, then agree on scope, milestones and a fixed quote.</p><span>Week 1</span></div>
+        <div class="step"><b>STEP 02</b><h3>Design</h3><p>Wireframes and a polished UI you can click through before any code is written.</p><span>Week 1–2</span></div>
+        <div class="step"><b>STEP 03</b><h3>Build</h3><p>Clean, tested code with a working demo every Friday so you always see progress.</p><span>Weeks 2–6</span></div>
+        <div class="step"><b>STEP 04</b><h3>Launch &amp; Support</h3><p>Cloud deployment, monitoring and analytics — and I stay after launch.</p><span>Go-live &amp; beyond</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="tech"><p class="eyebrow center">Tech we build with</p><div class="marquee"><div class="marquee__track" id="techTrack"></div></div></section>
+
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="container about">
@@ -260,6 +293,42 @@
   </div>
 </section>
 
+
+<!-- CASE STUDIES -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="head reveal"><span class="eyebrow">Case Studies</span><h2>Results clients can measure</h2><p>Real problems, real solutions, real numbers.</p></div>
+    <div class="cgrid" id="casesGrid"></div>
+    <div class="cta-strip"><a class="btn btn--ghost" href="case-studies.html">See all case studies →</a></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section--alt" id="pricing">
+  <div class="container">
+    <div class="head reveal"><span class="eyebrow">Pricing</span><h2>Simple, transparent packages</h2><p>Start small or go big. Every plan includes support after launch.</p></div>
+    <div class="plans" id="plansGrid"></div>
+    <div class="cta-strip"><a class="btn btn--primary" href="calculator.html">Estimate my project cost →</a></div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="head reveal"><span class="eyebrow">From the blog</span><h2>Ideas to help you build better</h2></div>
+    <div class="cgrid" id="blogGrid"></div>
+    <div class="cta-strip"><a class="btn btn--ghost" href="blog.html">Read all articles →</a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="head reveal"><span class="eyebrow">FAQ</span><h2>Questions? Answered.</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
 <!-- CTA / CONTACT -->
 <section class="cta" id="contact">
   <div class="container cta__inner reveal">
@@ -279,14 +348,17 @@
 <footer class="footer">
   <div class="container footer__grid">
     <div><a href="#top" class="logo logo--light"><span class="logo__mark">YN</span> Your Name</a><p>Websites, apps and AI automation for growing businesses.</p></div>
-    <div><h4>Explore</h4><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a></div>
+    <div><h4>Explore</h4><a href="#work">Work</a><a href="case-studies.html">Case Studies</a><a href="pricing.html">Pricing</a><a href="calculator.html">Cost Estimator</a><a href="blog.html">Blog</a></div>
     <div><h4>Connect</h4><a href="mailto:arfahlicense@gmail.com">arfahlicense@gmail.com</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">WhatsApp</a></div>
     <div><h4>Hours</h4><p>Mon–Sat, 10 AM – 7 PM</p></div>
   </div>
   <div class="container footer__bar">© <span id="yr"></span> Your Name. All rights reserved.</div>
 </footer>
 
+<script src="data.js"></script>
 <script src="script.js"></script>
+<script src="common.js"></script>
+<script src="pages.js"></script>
 <script src="premium.js"></script>
 <script src="hero.js"></script>
 </body>
