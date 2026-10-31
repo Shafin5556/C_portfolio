@@ -12,7 +12,7 @@
   if (saved) document.documentElement.dataset.theme = saved;
 
   /* ---------- injected nav + footer (sub pages) ---------- */
-  const links = [['index.html#work', 'Work'], ['case-studies.html', 'Case Studies'], ['pricing.html', 'Pricing'], ['calculator.html', 'Estimate'], ['blog.html', 'Blog'], ['about.html', 'About']];
+  const links = [['index.html#work', 'Work'], ['pricing.html', 'Pricing'], ['calculator.html', 'Estimate'], ['about.html', 'About']];
   const navHTML = `
   <header class="nav scrolled" id="nav"><div class="container nav__inner">
     <a href="index.html" class="logo"><span class="logo__mark">YN</span> ${esc(S.name)}</a>
@@ -25,8 +25,8 @@
   const footHTML = `
   <footer class="footer"><div class="container footer__grid">
     <div><a href="index.html" class="logo logo--light"><span class="logo__mark">YN</span> ${esc(S.name)}</a><p>Websites, apps and AI automation for growing businesses.</p></div>
-    <div><h4>Explore</h4><a href="index.html#work">Work</a><a href="case-studies.html">Case Studies</a><a href="pricing.html">Pricing</a><a href="calculator.html">Cost Estimator</a></div>
-    <div><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="book.html">Book a call</a><a href="pricing.html#faq">FAQ</a></div>
+    <div><h4>Explore</h4><a href="index.html#work">Work</a><a href="pricing.html">Pricing</a><a href="calculator.html">Cost Estimator</a></div>
+    <div><h4>Company</h4><a href="about.html">About</a><a href="book.html">Book a call</a><a href="pricing.html#faq">FAQ</a></div>
     <div><h4>Connect</h4><a href="mailto:${S.email}">${S.email}</a><a href="https://wa.me/${S.whatsapp}" target="_blank" rel="noopener">WhatsApp</a><a href="https://github.com/Shafin5556" target="_blank" rel="noopener">GitHub</a></div>
   </div><div class="container footer__bar">© ${new Date().getFullYear()} ${esc(S.name)}. All rights reserved.</div></footer>`;
   const navSlot = $('#site-nav'), footSlot = $('#site-footer');
@@ -99,7 +99,7 @@
     [/price|cost|how much|budget|quote|pricing/, 'Projects start at $990 (Starter), most business projects are $2,900+, and bigger platforms are custom. Try the <a href="calculator.html">cost estimator</a> for an instant range.'],
     [/time|long|deliver|deadline|week|fast/, 'Landing pages take ~2 weeks, stores and web apps 4–8 weeks, larger platforms 10–16 weeks. You get a milestone plan up front.'],
     [/ai|chatbot|automat|gpt/, 'Yes — I build AI assistants trained on your own docs, plus workflow automation. See the <a href="product.html?id=assistant">AI Support Assistant</a>.'],
-    [/shop|store|ecom|sell/, 'I build fast online stores with one-page checkout and inventory tools. See the <a href="product.html?id=store">Store product</a> and its <a href="case-study.html?id=lumina">case study</a>.'],
+    [/shop|store|ecom|sell/, 'I build fast online stores with one-page checkout and inventory tools. See the <a href="product.html?id=store">Store product</a>.'],
     [/support|maint|after/, 'Every plan includes free support after launch, and monthly maintenance plans are available.'],
     [/own|code|source/, 'You own 100% of the code, designs and assets once the project is paid.'],
     [/book|call|meet|consult|talk|contact/, 'Great — <a href="book.html">book a free consultation here</a> or message on WhatsApp using the green button.'],

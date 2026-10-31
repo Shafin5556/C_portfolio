@@ -5,16 +5,6 @@
   const id = new URLSearchParams(location.search).get('id');
   const prod = i => S.products.find(p => p.id === i);
 
-  const caseCard = c => { const p = prod(c.product); return `
-    <a class="ccard reveal" href="case-study.html?id=${c.id}">
-      <div class="ccard__img ${c.g}"><em>${c.industry}</em>${p.emoji}</div>
-      <div class="ccard__body"><small>${c.client}</small><h3>${c.title}</h3>
-        <div class="mini">${c.results.map(r => `<div><b>${r[0]}</b><span>${r[1]}</span></div>`).join('')}</div>
-        <span class="link">Read case study →</span></div></a>`; };
-  const postCard = p => `
-    <a class="ccard reveal" href="post.html?id=${p.id}">
-      <div class="ccard__img ${p.g}"><em>${p.cat}</em>✍️</div>
-      <div class="ccard__body"><small>${p.date} · ${p.read} read</small><h3>${p.title}</h3><p>${p.excerpt}</p><span class="link">Read article →</span></div></a>`;
   const plans = () => S.plans.map(p => `
     <div class="plan reveal ${p.featured ? 'feat' : ''}">
       ${p.featured ? '<span class="ribbon">Most popular</span>' : ''}
@@ -32,9 +22,7 @@
 
   /* ---------------- HOME ---------------- */
   if (P === 'home') {
-    put('#casesGrid', S.cases.map(caseCard).join(''));
     put('#plansGrid', plans());
-    put('#blogGrid', S.posts.map(postCard).join(''));
     put('#faqList', faq());
     const tech = [['React', '#61dafb'], ['Next.js', '#111827'], ['TypeScript', '#3178c6'], ['Node.js', '#3c873a'], ['Python', '#f7c948'], ['PostgreSQL', '#336791'], ['AWS', '#ff9900'], ['Stripe', '#635bff'], ['OpenAI', '#10a37f'], ['Figma', '#f24e1e'], ['Docker', '#2496ed'], ['Tailwind', '#38bdf8']];
     const t = tech.map(([n, c]) => `<div class="tchip"><i style="background:${c}"></i>${n}</div>`).join('');
@@ -54,34 +42,10 @@
     }
   }
 
-  /* ---------------- CASE STUDIES ---------------- */
-  if (P === 'cases') put('#list', S.cases.map(caseCard).join(''));
-  if (P === 'case') {
-    const c = S.cases.find(x => x.id === id) || S.cases[0], p = prod(c.product);
-    document.title = c.title + ' — ' + S.name;
-    put('#app', `
-      <div class="container detail"><div class="crumbs"><a href="index.html">Home</a> / <a href="case-studies.html">Case studies</a> / ${c.client}</div>
-      <div class="dhero ${c.g}"><div style="font-size:90px;margin-bottom:20px">${p.emoji}</div></div>
-      <div class="dgrid"><div>
-        <small class="eyebrow">${c.industry}</small>
-        <h1 style="font-size:clamp(28px,4vw,42px);margin-bottom:18px">${c.title}</h1>
-        <h2>The challenge</h2><p>${c.problem}</p>
-        <h2>The solution</h2><p>${c.solution}</p>
-        <h2>The results</h2><div class="res">${c.results.map(r => `<div><b>${r[0]}</b><span>${r[1]}</span></div>`).join('')}</div>
-        <div class="qte">“${c.quote}”<small>— ${c.by}, ${c.client}</small></div>
-      </div>
-      <aside class="side"><small style="color:var(--mut)">Client</small><div style="font-weight:700;font-size:18px">${c.client}</div><hr>
-        <small style="color:var(--mut)">Timeline</small><div style="font-weight:700">${c.duration}</div><hr>
-        <small style="color:var(--mut)">Built with</small><div class="tags" style="margin-top:8px">${c.stack.map(s => `<span>${s}</span>`).join('')}</div><hr>
-        <a class="btn btn--primary" href="book.html?product=${p.id}">Build something similar</a>
-        <a class="btn btn--ghost" href="product.html?id=${p.id}">View the product</a></aside></div></div>`);
-  }
-
   /* ---------------- PRODUCT ---------------- */
   if (P === 'product') {
     const p = prod(id) || S.products[0];
     document.title = p.name + ' — ' + S.name;
-    const rel = S.cases.find(c => c.product === p.id);
     put('#app', `
       <div class="container detail"><div class="crumbs"><a href="index.html">Home</a> / <a href="index.html#work">Work</a> / ${p.name}</div>
       <div class="dgrid"><div>
@@ -109,7 +73,7 @@
         <small style="color:var(--mut)">Tech stack</small><div class="tags" style="margin-top:8px">${p.stack.map(s => `<span>${s}</span>`).join('')}</div><hr>
         <a class="btn btn--primary" href="book.html?product=${p.id}">Request a quote</a>
         <a class="btn btn--ghost" href="calculator.html">Estimate cost</a>
-        ${rel ? `<a class="btn btn--ghost" href="case-study.html?id=${rel.id}">Read case study</a>` : ''}</aside></div>
+</aside></div>
       <h2 style="margin:70px 0 24px;font-size:28px">More products</h2>
       <div class="cgrid">${S.products.filter(x => x.id !== p.id).slice(0, 3).map(x => `
         <a class="ccard reveal" href="product.html?id=${x.id}"><div class="ccard__img ${x.g}"><em>${x.tag || x.cat}</em>${x.emoji}</div>
@@ -122,17 +86,6 @@
 
   /* ---------------- PRICING ---------------- */
   if (P === 'pricing') { put('#plansGrid', plans()); put('#faqList', faq()); }
-
-  /* ---------------- BLOG ---------------- */
-  if (P === 'blog') put('#list', S.posts.map(postCard).join(''));
-  if (P === 'post') {
-    const p = S.posts.find(x => x.id === id) || S.posts[0];
-    document.title = p.title + ' — ' + S.name;
-    put('#app', `<article class="post container"><div class="crumbs"><a href="blog.html">← All articles</a></div>
-      <small class="eyebrow">${p.cat}</small><h1>${p.title}</h1><div class="meta">${p.date} · ${p.read} read · by ${S.name}</div>
-      <div class="cover ${p.g}">✍️</div>${p.body.map(t => `<p>${t}</p>`).join('')}
-      <div class="qte" style="text-align:center">Have a project in mind?<br><a class="btn btn--primary" style="margin-top:14px" href="book.html">Book a free consultation</a></div></article>`);
-  }
 
   /* ---------------- CALCULATOR ---------------- */
   if (P === 'calc') {

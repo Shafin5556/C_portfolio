@@ -38,30 +38,6 @@ window.SITE = {
       stack: ['React', 'Node.js', 'Twilio', 'Stripe'], results: ['8k bookings / month', '−55% no-shows', '5h saved weekly'] }
   ],
 
-  cases: [
-    { id: 'lumina', client: 'Lumina Retail', industry: 'eCommerce', product: 'store', duration: '10 weeks', g: 'g1',
-      title: 'Doubling online sales for a growing retail brand',
-      problem: 'Lumina’s old store was slow, hard to use on mobile and lost most shoppers at checkout.',
-      solution: 'We rebuilt it as a fast, mobile-first storefront with a one-page checkout, smart upsells and a live inventory dashboard.',
-      results: [['+312%', 'Revenue in 90 days'], ['2.4×', 'Mobile conversion'], ['0.8s', 'Page load']],
-      stack: ['Next.js', 'Node.js', 'Stripe', 'PostgreSQL'],
-      quote: 'Delivered ahead of schedule and our sales doubled in two months.', by: 'Sarah A., Founder' },
-    { id: 'brightly', client: 'Brightly Support', industry: 'AI & Automation', product: 'assistant', duration: '6 weeks', g: 'g4',
-      title: 'Cutting support tickets by 70% with an AI assistant',
-      problem: 'A small team was drowning in repetitive questions and response times kept growing.',
-      solution: 'We trained an assistant on their docs and past tickets, added human hand-off and plugged it into their helpdesk.',
-      results: [['−70%', 'Support tickets'], ['<3s', 'Response time'], ['92%', 'Satisfaction']],
-      stack: ['OpenAI', 'Python', 'Vector DB', 'React'],
-      quote: 'The AI assistant took over most of our support load. Best investment this year.', by: 'Michael K., COO' },
-    { id: 'orbit', client: 'Orbit Market', industry: 'Marketplace', product: 'marketplace', duration: '14 weeks', g: 'g3',
-      title: 'Launching a 300-vendor marketplace from scratch',
-      problem: 'Orbit needed a trustworthy platform with split payments, vendor tools and strong admin control.',
-      solution: 'We shipped a multi-vendor marketplace with onboarding, payouts, reviews and dispute handling.',
-      results: [['300+', 'Vendors in 4 months'], ['$1.2M', 'Gross volume'], ['4.8★', 'Vendor rating']],
-      stack: ['Next.js', 'NestJS', 'Stripe Connect', 'Redis'],
-      quote: 'Clean, fast, and beautiful. Our marketplace launched without a single hiccup.', by: 'Riya P., CEO' }
-  ],
-
   plans: [
     { name: 'Starter', price: '$990', note: 'Perfect for landing pages & small sites', features: ['Up to 5 pages', 'Responsive design', 'Basic SEO setup', 'Contact form', '2 weeks delivery', '14 days support'], cta: 'Get Starter' },
     { name: 'Business', price: '$2,900', note: 'Most popular for growing companies', featured: true, features: ['Custom web app or store', 'Admin dashboard', 'Payments & integrations', 'Performance & SEO', '4–8 weeks delivery', '60 days support'], cta: 'Get Business' },
@@ -75,17 +51,5 @@ window.SITE = {
     ['Do you offer support after launch?', 'Every plan includes free support. After that you can choose a monthly maintenance plan for updates, monitoring and fixes.'],
     ['Can you work with my existing team or product?', 'Absolutely. I can take over an existing codebase, add features, or join your team as a dedicated developer.'],
     ['How do payments work?', 'Usually 40% to start, 30% at the midpoint and 30% on delivery. Larger projects can be split by milestone.']
-  ],
-
-  posts: [
-    { id: 'launch-faster', date: 'Oct 12, 2026', cat: 'Product', read: '5 min', g: 'g2', title: 'How to launch your MVP in 6 weeks (without cutting corners)',
-      excerpt: 'A simple framework for scoping, building and shipping a first version that real customers can use.',
-      body: ['Most MVPs fail because they try to do too much. The fix is to define one core job your product does better than anything else, then ruthlessly cut the rest.', 'Start with a one-page scope: who is it for, what is the single outcome, and what is the smallest set of features that delivers it. Everything else goes on a “later” list.', 'Work in weekly demos. Each Friday you should be able to click through something real. This keeps feedback fast and prevents surprise at the end.', 'Finally, plan the launch as part of the build: analytics, onboarding emails and a way to talk to your first users. Shipping is the start, not the finish.'] },
-    { id: 'ai-support', date: 'Sep 28, 2026', cat: 'AI', read: '4 min', g: 'g4', title: '5 support tasks you can safely hand to an AI assistant',
-      excerpt: 'From order status to password resets — what to automate first, and where to keep humans in the loop.',
-      body: ['AI assistants shine on repetitive, well-documented questions: order tracking, opening hours, password resets, plan comparisons and basic troubleshooting.', 'Keep humans for anything emotional, financial disputes or edge cases. A good assistant knows when to hand off and passes the full conversation along.', 'Train it on your real docs and past tickets, add guardrails for tone, and review conversations weekly. Accuracy improves fast with feedback.'] },
-    { id: 'fast-sites', date: 'Sep 05, 2026', cat: 'Performance', read: '6 min', g: 'g3', title: 'Why a 1-second faster website can raise sales by 7%',
-      excerpt: 'Speed is a revenue feature. Here are the quick wins that move the needle most.',
-      body: ['Every extra second of load time loses visitors. Mobile users on slower networks leave first, and they are often your majority.', 'The biggest wins are usually simple: compress and lazy-load images, ship less JavaScript, use a CDN and cache aggressively.', 'Measure with real-user data, not just lab scores, and set a performance budget so new features never slow the site down.'] }
   ]
 };
