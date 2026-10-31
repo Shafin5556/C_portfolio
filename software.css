@@ -1,0 +1,52 @@
+/* ===== Fix invisible text ===== */
+.hero h1 .grad{-webkit-text-fill-color:initial;background:none;color:inherit;animation:none}
+.hero h1 .grad .w>span,.hero h1 .grad:not(:has(.w)){background:linear-gradient(135deg,#6366f1,#a855f7 55%,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.reel{color:var(--ink)}
+.reel h2{color:var(--ink)}
+
+/* ===== Software hero visual ===== */
+.hero__visual{height:560px;perspective:1400px}
+.hero__visual::before{display:none}
+.dev{position:relative;width:100%;height:100%;transform-style:preserve-3d}
+.dev .layer{position:absolute;transition:transform .15s ease-out;will-change:transform}
+.win{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 70px -25px rgba(79,70,229,.35),0 2px 0 #fff inset;overflow:hidden}
+.win__bar{display:flex;align-items:center;gap:6px;padding:11px 14px;background:#fafaff;border-bottom:1px solid var(--line)}
+.win__bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}
+.win__bar i:nth-child(2){background:#febc2e}.win__bar i:nth-child(3){background:#28c840}
+.win__bar span{margin-left:10px;font:500 12px 'Inter',monospace;color:var(--mut)}
+
+/* editor */
+.editor{left:0;top:30px;width:78%;animation:bob2 7s ease-in-out infinite}
+.code{padding:16px 18px;font:500 13px/1.75 ui-monospace,'JetBrains Mono',Consolas,monospace;color:#334;min-height:222px;white-space:pre;overflow:hidden}
+.code .k{color:#a855f7}.code .f{color:#2563eb}.code .s{color:#059669}.code .c{color:#9aa3b8}.code .n{color:#d97706}
+.caret{display:inline-block;width:2px;height:15px;background:var(--p);vertical-align:-2px;animation:blink2 1s steps(1) infinite}
+@keyframes blink2{50%{opacity:0}}
+
+/* browser preview */
+.preview{right:0;top:150px;width:62%;animation:bob2 8s ease-in-out infinite -2s}
+.site{padding:16px;display:grid;gap:12px}
+.site__hero{height:84px;border-radius:12px;background:linear-gradient(135deg,#6366f1,#a855f7 60%,#06b6d4);position:relative;overflow:hidden}
+.site__hero::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);animation:sweep 3.2s infinite}
+.site__row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.site__row b{height:52px;border-radius:10px;background:#eef0ff;animation:pulse2 3s ease-in-out infinite}
+.site__row b:nth-child(2){animation-delay:.4s;background:#e6f8fb}.site__row b:nth-child(3){animation-delay:.8s;background:#fbeafd}
+@keyframes pulse2{50%{transform:translateY(-4px);box-shadow:0 10px 18px -10px rgba(99,102,241,.5)}}
+.site__line{height:8px;border-radius:6px;background:#eceef8}.site__line.s{width:60%}
+
+/* terminal */
+.term{left:6%;bottom:6px;width:56%;background:#fff;animation:bob2 6s ease-in-out infinite -4s}
+.term .body{padding:12px 16px;font:500 12px/1.8 ui-monospace,Consolas,monospace;color:#475069;min-height:110px}
+.term .ok{color:#059669}.term .dim{color:#9aa3b8}.term .pr{color:var(--p)}
+.term .ln{opacity:0;transform:translateY(4px);transition:.35s}
+.term .ln.on{opacity:1;transform:none}
+
+/* chips */
+.chip{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;font-weight:600;font-size:13px;box-shadow:var(--sh);animation:bob2 5s ease-in-out infinite}
+.chip i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+.chip--a{right:6%;top:0;animation-delay:-1s}.chip--b{right:2%;bottom:70px;animation-delay:-3s}
+.chip--b i{background:var(--p);box-shadow:0 0 0 4px rgba(99,102,241,.18)}
+.stackpills{position:absolute;left:46%;top:-6px;display:flex;gap:6px}
+.stackpills span{font:700 11px Inter;padding:5px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--p);box-shadow:var(--sh)}
+@keyframes bob2{50%{transform:translateY(-10px)}}
+@media(max-width:980px){.hero__visual{height:470px}.editor{width:90%}.preview{width:70%;top:170px}.term{width:64%}.code{font-size:11.5px}}
+@media(max-width:560px){.chip--b,.stackpills{display:none}}
